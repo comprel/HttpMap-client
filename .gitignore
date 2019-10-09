@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+*.swp
+*.swo
+*.pid
+*.log
+*.pyc
+/.idea/*
+/test/

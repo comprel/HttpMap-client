@@ -1,0 +1,33 @@
+#!/bin/bash
+
+uuid=`/sbin/dmidecode | grep -i uuid | awk '{print $NF}'`
+
+start() {
+  /bin/python /usr/local/netmap/service/netmapclient.py ${uuid}
+}
+
+register() {
+    /bin/python /usr/local/netmap/service/register.py register ${uuid}
+}
+
+unregister() {
+    /bin/python /usr/local/netmap/service/register.py unregister ${uuid}
+}
+
+help() {
+echo "usage: $0 start/register/unregister  DEFAULT: start"
+}
+
+if [ "$1" == "" ]; then
+    start
+elif [ "$1" == "start" ];then
+    stop
+elif [ "$1" == "register" ];then
+    register
+elif [ "$1" == "unregister" ];then
+    unregister
+elif [ "$1" == "help" ];then
+    help
+else
+    start
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup httpry -f -,source-ip,dest-ip,direction,method,dest-port,host,request-uri -p >/usr/local/netmap/access.log &

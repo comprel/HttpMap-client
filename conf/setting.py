@@ -1,0 +1,6 @@
+api_service = "127.0.0.1:8090"
+register_url = "/api/v1/host/register"
+access_url = "/api/v1/access"
+localipaddress_url = "/api/v1/host/localipaddress"
+logfile = "logs/client.log"
+log_level = "INFO"

@@ -1,0 +1,19 @@
+[Unit]
+Description=netmap client ,we use systemctl tool to help manage service
+After=syslog.target network.target
+Documentation=https://xxx.netmap.xxx
+
+[Service]
+User=root
+CPUQuota=10%
+MemoryMax=300
+PIDFile=/usr/local/netmap/service.pid
+ExecStart= /usr/local/netmap/manager
+TimeoutStopSec=10
+TimeoutStartSec=10
+KillSignal=SIGQUIT
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
